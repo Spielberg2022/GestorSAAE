@@ -54,5 +54,21 @@ namespace GestorSAAE.Apresentacao
         {
 
         }
+
+        private void salvarButton_Click(object sender, EventArgs e)
+        {
+            //Deixar essa opção para o final, depois de confirmado o salvamento
+            nomeTextBox.Enabled = false;
+            identificadorTextBox.Enabled = false;
+            senhaTextBox.Enabled = false;
+            situacaoComboBox.Enabled = false;
+            autenticacaoCheckBox.Enabled = false;
+        }
+
+        private void localizarButton_Click(object sender, EventArgs e)
+        {
+            FormLocalizar formLocalizar = new FormLocalizar();
+            formLocalizar.ShowDialog();
+        }
     }
 }

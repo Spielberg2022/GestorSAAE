@@ -93,6 +93,16 @@ namespace GestorSAAE.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap funcionarios {
+            get {
+                object obj = ResourceManager.GetObject("funcionarios", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fundo {
             get {
                 object obj = ResourceManager.GetObject("fundo", resourceCulture);
@@ -106,6 +116,16 @@ namespace GestorSAAE.Properties {
         internal static System.Drawing.Bitmap salvar_arquivo__2_ {
             get {
                 object obj = ResourceManager.GetObject("salvar-arquivo (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap verifica__2_ {
+            get {
+                object obj = ResourceManager.GetObject("verifica (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

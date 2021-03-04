@@ -34,6 +34,7 @@ namespace GestorSAAE.Apresentacao
             System.Windows.Forms.Label identificadorLabel;
             System.Windows.Forms.Label senhaLabel;
             System.Windows.Forms.Label situacaoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadUsuario));
             this.usuariosGroupBox = new System.Windows.Forms.GroupBox();
             this.codigoLabel1 = new System.Windows.Forms.Label();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
@@ -43,10 +44,10 @@ namespace GestorSAAE.Apresentacao
             this.loginLabel = new System.Windows.Forms.Label();
             this.editarButton = new System.Windows.Forms.Button();
             this.situacaoComboBox = new System.Windows.Forms.ComboBox();
-            this.salvarButton = new System.Windows.Forms.Button();
-            this.localizarButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imprimirButton = new System.Windows.Forms.Button();
+            this.localizarButton = new System.Windows.Forms.Button();
+            this.salvarButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             codigoLabel = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
             identificadorLabel = new System.Windows.Forms.Label();
@@ -58,6 +59,8 @@ namespace GestorSAAE.Apresentacao
             // 
             // usuariosGroupBox
             // 
+            this.usuariosGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.usuariosGroupBox.Controls.Add(situacaoLabel);
             this.usuariosGroupBox.Controls.Add(this.situacaoComboBox);
             this.usuariosGroupBox.Controls.Add(codigoLabel);
@@ -103,6 +106,8 @@ namespace GestorSAAE.Apresentacao
             // 
             // nomeTextBox
             // 
+            this.nomeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nomeTextBox.Enabled = false;
             this.nomeTextBox.Location = new System.Drawing.Point(89, 61);
             this.nomeTextBox.Name = "nomeTextBox";
@@ -158,14 +163,15 @@ namespace GestorSAAE.Apresentacao
             this.loginLabel.AutoSize = true;
             this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginLabel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.loginLabel.Location = new System.Drawing.Point(254, 25);
+            this.loginLabel.Location = new System.Drawing.Point(151, 22);
             this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(139, 33);
+            this.loginLabel.Size = new System.Drawing.Size(317, 33);
             this.loginLabel.TabIndex = 0;
-            this.loginLabel.Text = "Usuários";
+            this.loginLabel.Text = "Cadastro de Usuários";
             // 
             // editarButton
             // 
+            this.editarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.editarButton.Location = new System.Drawing.Point(548, 162);
             this.editarButton.Name = "editarButton";
             this.editarButton.Size = new System.Drawing.Size(64, 23);
@@ -197,19 +203,19 @@ namespace GestorSAAE.Apresentacao
             this.situacaoComboBox.Size = new System.Drawing.Size(121, 21);
             this.situacaoComboBox.TabIndex = 9;
             // 
-            // salvarButton
+            // imprimirButton
             // 
-            this.salvarButton.Image = global::GestorSAAE.Properties.Resources.salvar_arquivo__2_;
-            this.salvarButton.Location = new System.Drawing.Point(548, 191);
-            this.salvarButton.Name = "salvarButton";
-            this.salvarButton.Size = new System.Drawing.Size(64, 64);
-            this.salvarButton.TabIndex = 4;
-            this.salvarButton.Text = "&Salvar";
-            this.salvarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.salvarButton.UseVisualStyleBackColor = true;
+            this.imprimirButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.imprimirButton.Location = new System.Drawing.Point(548, 262);
+            this.imprimirButton.Name = "imprimirButton";
+            this.imprimirButton.Size = new System.Drawing.Size(64, 23);
+            this.imprimirButton.TabIndex = 5;
+            this.imprimirButton.Text = "&Imprimir";
+            this.imprimirButton.UseVisualStyleBackColor = true;
             // 
             // localizarButton
             // 
+            this.localizarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.localizarButton.Image = global::GestorSAAE.Properties.Resources.encontrar__2_;
             this.localizarButton.Location = new System.Drawing.Point(548, 92);
             this.localizarButton.Name = "localizarButton";
@@ -218,6 +224,20 @@ namespace GestorSAAE.Apresentacao
             this.localizarButton.Text = "&Localizar";
             this.localizarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.localizarButton.UseVisualStyleBackColor = true;
+            this.localizarButton.Click += new System.EventHandler(this.localizarButton_Click);
+            // 
+            // salvarButton
+            // 
+            this.salvarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.salvarButton.Image = global::GestorSAAE.Properties.Resources.salvar_arquivo__2_;
+            this.salvarButton.Location = new System.Drawing.Point(548, 191);
+            this.salvarButton.Name = "salvarButton";
+            this.salvarButton.Size = new System.Drawing.Size(64, 64);
+            this.salvarButton.TabIndex = 4;
+            this.salvarButton.Text = "&Salvar";
+            this.salvarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.salvarButton.UseVisualStyleBackColor = true;
+            this.salvarButton.Click += new System.EventHandler(this.salvarButton_Click);
             // 
             // pictureBox1
             // 
@@ -228,15 +248,6 @@ namespace GestorSAAE.Apresentacao
             this.pictureBox1.Size = new System.Drawing.Size(137, 341);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // imprimirButton
-            // 
-            this.imprimirButton.Location = new System.Drawing.Point(548, 262);
-            this.imprimirButton.Name = "imprimirButton";
-            this.imprimirButton.Size = new System.Drawing.Size(64, 23);
-            this.imprimirButton.TabIndex = 5;
-            this.imprimirButton.Text = "&Imprimir";
-            this.imprimirButton.UseVisualStyleBackColor = true;
             // 
             // FormCadUsuario
             // 
@@ -251,6 +262,7 @@ namespace GestorSAAE.Apresentacao
             this.Controls.Add(this.loginLabel);
             this.Controls.Add(this.usuariosGroupBox);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCadUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Usuários";

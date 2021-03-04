@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>gestorWsly.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,6 +53,12 @@
     <Compile Include="Apresentacao\FormCadUsuario.Designer.cs">
       <DependentUpon>FormCadUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Apresentacao\FormLocalizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\FormLocalizar.Designer.cs">
+      <DependentUpon>FormLocalizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Apresentacao\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +71,7 @@
     <Compile Include="Apresentacao\MDIParent.Designer.cs">
       <DependentUpon>MDIParent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dominio\ClassUsuario.cs" />
     <Compile Include="GestorWslyDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -71,6 +81,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Apresentacao\FormCadUsuario.resx">
       <DependentUpon>FormCadUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\FormLocalizar.resx">
+      <DependentUpon>FormLocalizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -112,7 +125,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Aplicacao\" />
-    <Folder Include="Dominio\" />
     <Folder Include="Persistencia\" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +141,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\editar %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verifica %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funcionarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="gestorWsly.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
