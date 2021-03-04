@@ -61,31 +61,32 @@ namespace GestorSAAE.Apresentacao
             // 
             // senhaMaskedTextBox
             // 
-            this.senhaMaskedTextBox.Location = new System.Drawing.Point(132, 133);
+            this.senhaMaskedTextBox.Location = new System.Drawing.Point(131, 132);
             this.senhaMaskedTextBox.Name = "senhaMaskedTextBox";
             this.senhaMaskedTextBox.Size = new System.Drawing.Size(181, 20);
-            this.senhaMaskedTextBox.TabIndex = 7;
+            this.senhaMaskedTextBox.TabIndex = 3;
+            this.senhaMaskedTextBox.UseSystemPasswordChar = true;
             // 
             // identificadorTextBox
             // 
-            this.identificadorTextBox.Location = new System.Drawing.Point(132, 107);
+            this.identificadorTextBox.Location = new System.Drawing.Point(131, 106);
             this.identificadorTextBox.Name = "identificadorTextBox";
             this.identificadorTextBox.Size = new System.Drawing.Size(181, 20);
-            this.identificadorTextBox.TabIndex = 6;
+            this.identificadorTextBox.TabIndex = 1;
             // 
             // senhaLabel
             // 
             this.senhaLabel.AutoSize = true;
-            this.senhaLabel.Location = new System.Drawing.Point(85, 136);
+            this.senhaLabel.Location = new System.Drawing.Point(84, 135);
             this.senhaLabel.Name = "senhaLabel";
             this.senhaLabel.Size = new System.Drawing.Size(41, 13);
-            this.senhaLabel.TabIndex = 5;
+            this.senhaLabel.TabIndex = 2;
             this.senhaLabel.Text = "Senha:";
             // 
             // identificadorLabel
             // 
             this.identificadorLabel.AutoSize = true;
-            this.identificadorLabel.Location = new System.Drawing.Point(58, 110);
+            this.identificadorLabel.Location = new System.Drawing.Point(57, 109);
             this.identificadorLabel.Name = "identificadorLabel";
             this.identificadorLabel.Size = new System.Drawing.Size(68, 13);
             this.identificadorLabel.TabIndex = 4;
@@ -93,28 +94,28 @@ namespace GestorSAAE.Apresentacao
             // 
             // cancelarButton
             // 
-            this.cancelarButton.Location = new System.Drawing.Point(238, 190);
+            this.cancelarButton.Location = new System.Drawing.Point(237, 189);
             this.cancelarButton.Name = "cancelarButton";
             this.cancelarButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelarButton.TabIndex = 3;
+            this.cancelarButton.TabIndex = 7;
             this.cancelarButton.Text = "&Cancelar";
             this.cancelarButton.UseVisualStyleBackColor = true;
             // 
             // limparButton
             // 
-            this.limparButton.Location = new System.Drawing.Point(157, 190);
+            this.limparButton.Location = new System.Drawing.Point(156, 189);
             this.limparButton.Name = "limparButton";
             this.limparButton.Size = new System.Drawing.Size(75, 23);
-            this.limparButton.TabIndex = 2;
+            this.limparButton.TabIndex = 6;
             this.limparButton.Text = "&Limpar";
             this.limparButton.UseVisualStyleBackColor = true;
             // 
             // entrarButton
             // 
-            this.entrarButton.Location = new System.Drawing.Point(76, 190);
+            this.entrarButton.Location = new System.Drawing.Point(75, 189);
             this.entrarButton.Name = "entrarButton";
             this.entrarButton.Size = new System.Drawing.Size(75, 23);
-            this.entrarButton.TabIndex = 1;
+            this.entrarButton.TabIndex = 5;
             this.entrarButton.Text = "&Entrar";
             this.entrarButton.UseVisualStyleBackColor = true;
             // 
@@ -123,7 +124,7 @@ namespace GestorSAAE.Apresentacao
             this.loginLabel.AutoSize = true;
             this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginLabel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.loginLabel.Location = new System.Drawing.Point(151, 45);
+            this.loginLabel.Location = new System.Drawing.Point(150, 44);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(91, 33);
             this.loginLabel.TabIndex = 0;
@@ -132,10 +133,10 @@ namespace GestorSAAE.Apresentacao
             // autenticarCheckBox
             // 
             this.autenticarCheckBox.AutoSize = true;
-            this.autenticarCheckBox.Location = new System.Drawing.Point(239, 159);
+            this.autenticarCheckBox.Location = new System.Drawing.Point(238, 158);
             this.autenticarCheckBox.Name = "autenticarCheckBox";
             this.autenticarCheckBox.Size = new System.Drawing.Size(74, 17);
-            this.autenticarCheckBox.TabIndex = 8;
+            this.autenticarCheckBox.TabIndex = 4;
             this.autenticarCheckBox.Text = "Autenticar";
             this.autenticarCheckBox.UseVisualStyleBackColor = true;
             this.autenticarCheckBox.Visible = false;

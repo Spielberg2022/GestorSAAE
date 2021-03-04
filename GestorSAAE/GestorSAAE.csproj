@@ -44,25 +44,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Apresentacao\FormCadUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\FormCadUsuario.Designer.cs">
+      <DependentUpon>FormCadUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Apresentacao\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Apresentacao\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Apresentacao\MDIParent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Apresentacao\MDIParent.Designer.cs">
+      <DependentUpon>MDIParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestorWslyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestorWslyDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Apresentacao\FormCadUsuario.resx">
+      <DependentUpon>FormCadUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Apresentacao\MDIParent.resx">
+      <DependentUpon>MDIParent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -72,7 +86,20 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
+    <None Include="GestorWslyDataSet.xsc">
+      <DependentUpon>GestorWslyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GestorWslyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GestorWslyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GestorWslyDataSet.xss">
+      <DependentUpon>GestorWslyDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -86,8 +113,22 @@
   <ItemGroup>
     <Folder Include="Aplicacao\" />
     <Folder Include="Dominio\" />
-    <Folder Include="Imagens\" />
     <Folder Include="Persistencia\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\Cadastro.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\encontrar %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salvar-arquivo %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
