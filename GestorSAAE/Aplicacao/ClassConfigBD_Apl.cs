@@ -37,12 +37,12 @@ namespace GestorSAAE.Aplicacao
 			return Bd.Bds();
 		}
 
-		/// <summary>
-		/// Conecta o banco de dados
-		/// </summary>
-		/// <param name="BD"> Dados do banco de dados</param>
-		/// <returns> True para conexão realizada com sucesso e False para conexão não realizada.</returns>
-		public bool Conectar(ClassConfigBD_Dom BD)
+        /// <summary>
+        /// Conecta o banco de dados
+        /// </summary>
+        /// <param name="BD"> Dados do banco de dados</param>
+        /// <returns> True para conexão realizada com sucesso e False para conexão não realizada.</returns>
+        public bool Conectar(ClassConfigBD_Dom BD)
 		{
 			if (!Bd.Conectar(BD))
 			{

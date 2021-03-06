@@ -49,6 +49,8 @@ namespace GestorSAAE.Apresentacao
             this.localizarButton = new System.Windows.Forms.Button();
             this.salvarButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.altSenhaCheckBox = new System.Windows.Forms.CheckBox();
+            this.sqlConnection = new System.Data.SqlClient.SqlConnection();
             codigoLabel = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
             identificadorLabel = new System.Windows.Forms.Label();
@@ -107,6 +109,7 @@ namespace GestorSAAE.Apresentacao
             // 
             this.usuariosGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.usuariosGroupBox.Controls.Add(this.altSenhaCheckBox);
             this.usuariosGroupBox.Controls.Add(situacaoLabel);
             this.usuariosGroupBox.Controls.Add(this.situacaoComboBox);
             this.usuariosGroupBox.Controls.Add(codigoLabel);
@@ -123,7 +126,7 @@ namespace GestorSAAE.Apresentacao
             this.usuariosGroupBox.Size = new System.Drawing.Size(399, 238);
             this.usuariosGroupBox.TabIndex = 1;
             this.usuariosGroupBox.TabStop = false;
-            this.usuariosGroupBox.Text = "Usuários";
+            this.usuariosGroupBox.Text = "Usuário:";
             // 
             // situacaoComboBox
             // 
@@ -187,7 +190,7 @@ namespace GestorSAAE.Apresentacao
             this.loginLabel.AutoSize = true;
             this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginLabel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.loginLabel.Location = new System.Drawing.Point(151, 22);
+            this.loginLabel.Location = new System.Drawing.Point(143, 22);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(317, 33);
             this.loginLabel.TabIndex = 0;
@@ -196,6 +199,7 @@ namespace GestorSAAE.Apresentacao
             // editarButton
             // 
             this.editarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.editarButton.Enabled = false;
             this.editarButton.Location = new System.Drawing.Point(548, 191);
             this.editarButton.Name = "editarButton";
             this.editarButton.Size = new System.Drawing.Size(64, 23);
@@ -242,6 +246,7 @@ namespace GestorSAAE.Apresentacao
             // salvarButton
             // 
             this.salvarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.salvarButton.Enabled = false;
             this.salvarButton.Image = global::GestorSAAE.Properties.Resources.salvar_arquivo__2_;
             this.salvarButton.Location = new System.Drawing.Point(548, 220);
             this.salvarButton.Name = "salvarButton";
@@ -261,6 +266,20 @@ namespace GestorSAAE.Apresentacao
             this.pictureBox1.Size = new System.Drawing.Size(137, 341);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // altSenhaCheckBox
+            // 
+            this.altSenhaCheckBox.AutoSize = true;
+            this.altSenhaCheckBox.Location = new System.Drawing.Point(212, 128);
+            this.altSenhaCheckBox.Name = "altSenhaCheckBox";
+            this.altSenhaCheckBox.Size = new System.Drawing.Size(88, 17);
+            this.altSenhaCheckBox.TabIndex = 11;
+            this.altSenhaCheckBox.Text = "Alterar senha";
+            this.altSenhaCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // sqlConnection
+            // 
+            this.sqlConnection.FireInfoMessageEventOnUserErrors = false;
             // 
             // FormCadUsuario
             // 
@@ -305,5 +324,7 @@ namespace GestorSAAE.Apresentacao
         private System.Windows.Forms.ComboBox situacaoComboBox;
         private System.Windows.Forms.Button imprimirButton;
         private System.Windows.Forms.Button novoButton;
+        private System.Windows.Forms.CheckBox altSenhaCheckBox;
+        public System.Data.SqlClient.SqlConnection sqlConnection;
     }
 }

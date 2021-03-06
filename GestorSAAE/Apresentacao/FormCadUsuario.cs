@@ -43,13 +43,39 @@ namespace GestorSAAE.Apresentacao
 
         private void editarButton_Click(object sender, EventArgs e)
         {
-            if(codigoLabel1.Text != "")
+            if(editarButton.Text == "&Editar")
             {
+                editarButton.Text = "&Cancelar";
+                localizarButton.Enabled = false;
+                imprimirButton.Enabled = false;
+                novoButton.Enabled = false;
+                salvarButton.Enabled = true;
                 nomeTextBox.Enabled = true;
                 identificadorTextBox.Enabled = true;
-                senhaTextBox.Enabled = true;
                 situacaoComboBox.Enabled = true;
                 autenticacaoCheckBox.Enabled = true;
+                if (altSenhaCheckBox.Checked)
+                {
+                    senhaTextBox.Enabled = true;
+                    senhaTextBox.Clear();
+                    senhaTextBox.Focus();
+                }
+                else
+                    nomeTextBox.Focus();               
+            }
+            else
+            {
+                editarButton.Text = "&Editar";
+                localizarButton.Enabled = true;
+                imprimirButton.Enabled = true;
+                novoButton.Enabled = true;
+                salvarButton.Enabled = false;
+                nomeTextBox.Enabled = false;
+                identificadorTextBox.Enabled = false;
+                situacaoComboBox.Enabled = false;
+                autenticacaoCheckBox.Enabled = false;
+                altSenhaCheckBox.Checked = false;
+                senhaTextBox.Enabled = false;
             }
         }
 
@@ -71,24 +97,55 @@ namespace GestorSAAE.Apresentacao
 
         private void localizarButton_Click(object sender, EventArgs e)
         {
-            FormLocalizar formLocalizar = new FormLocalizar();
+            FormLocalizarUsuario formLocalizar = new FormLocalizarUsuario();
+            formLocalizar.sqlConnection = sqlConnection;
             formLocalizar.ShowDialog();
         }
 
         private void novoButton_Click(object sender, EventArgs e)
         {
-            codigoLabel1.Text = "NOVO CÓDIGO";
-            nomeTextBox.Clear();
-            identificadorTextBox.Clear();
-            senhaTextBox.Clear();
-            situacaoComboBox.Text = "";
-            autenticacaoCheckBox.Checked = false;
-            nomeTextBox.Enabled = true;
-            identificadorTextBox.Enabled = true;
-            senhaTextBox.Enabled = true;
-            situacaoComboBox.Enabled = true;
-            autenticacaoCheckBox.Enabled = true;
-            nomeTextBox.Focus();
+            if(novoButton.Text == "&Novo")
+            {
+                novoButton.Text = "&Cancelar";
+                localizarButton.Enabled = false;
+                imprimirButton.Enabled = false;
+                editarButton.Enabled = false;
+                altSenhaCheckBox.Enabled = false;
+                salvarButton.Enabled = true;
+                codigoLabel1.Text = "NOVO CÓDIGO";
+                nomeTextBox.Clear();
+                identificadorTextBox.Clear();
+                senhaTextBox.Clear();
+                situacaoComboBox.Text = "";
+                autenticacaoCheckBox.Checked = false;
+                nomeTextBox.Enabled = true;
+                identificadorTextBox.Enabled = true;
+                senhaTextBox.Enabled = true;
+                situacaoComboBox.Enabled = true;
+                altSenhaCheckBox.Enabled = true;
+                nomeTextBox.Focus();
+            }
+            else
+            {
+                novoButton.Text = "&Novo";
+                localizarButton.Enabled = true;
+                imprimirButton.Enabled = true;
+                editarButton.Enabled = true;
+                altSenhaCheckBox.Enabled = true;
+                salvarButton.Enabled = false;
+                codigoLabel1.Text = "";
+                nomeTextBox.Clear();
+                identificadorTextBox.Clear();
+                senhaTextBox.Clear();
+                situacaoComboBox.Text = "";
+                autenticacaoCheckBox.Checked = true;
+                nomeTextBox.Enabled = false;
+                identificadorTextBox.Enabled = false;
+                senhaTextBox.Enabled = false;
+                situacaoComboBox.Enabled = false;
+                altSenhaCheckBox.Enabled = false;
+            }
+            
         }
 
         private void imprimirButton_Click_1(object sender, EventArgs e)

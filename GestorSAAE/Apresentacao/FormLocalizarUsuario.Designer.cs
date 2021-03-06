@@ -1,7 +1,7 @@
 ﻿
 namespace GestorSAAE.Apresentacao
 {
-    partial class FormLocalizar
+    partial class FormLocalizarUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -31,17 +31,19 @@ namespace GestorSAAE.Apresentacao
         {
             this.localizarTabControl = new System.Windows.Forms.TabControl();
             this.codigoTabPage = new System.Windows.Forms.TabPage();
-            this.nomeTabPage = new System.Windows.Forms.TabPage();
-            this.codigoTextBox = new System.Windows.Forms.TextBox();
-            this.exibirButton = new System.Windows.Forms.Button();
-            this.localizarButton = new System.Windows.Forms.Button();
             this.codigoDataGridView = new System.Windows.Forms.DataGridView();
+            this.codigoTextBox = new System.Windows.Forms.TextBox();
+            this.nomeTabPage = new System.Windows.Forms.TabPage();
             this.nomeDataGridView = new System.Windows.Forms.DataGridView();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
+            this.exibirButton = new System.Windows.Forms.Button();
+            this.localizarButton = new System.Windows.Forms.Button();
+            this.cancelarButton = new System.Windows.Forms.Button();
+            this.sqlConnection = new System.Data.SqlClient.SqlConnection();
             this.localizarTabControl.SuspendLayout();
             this.codigoTabPage.SuspendLayout();
-            this.nomeTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.codigoDataGridView)).BeginInit();
+            this.nomeTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nomeDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +54,7 @@ namespace GestorSAAE.Apresentacao
             this.localizarTabControl.Location = new System.Drawing.Point(12, 12);
             this.localizarTabControl.Name = "localizarTabControl";
             this.localizarTabControl.SelectedIndex = 0;
-            this.localizarTabControl.Size = new System.Drawing.Size(465, 159);
+            this.localizarTabControl.Size = new System.Drawing.Size(465, 164);
             this.localizarTabControl.TabIndex = 0;
             // 
             // codigoTabPage
@@ -63,21 +65,17 @@ namespace GestorSAAE.Apresentacao
             this.codigoTabPage.Location = new System.Drawing.Point(4, 22);
             this.codigoTabPage.Name = "codigoTabPage";
             this.codigoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.codigoTabPage.Size = new System.Drawing.Size(457, 133);
+            this.codigoTabPage.Size = new System.Drawing.Size(457, 138);
             this.codigoTabPage.TabIndex = 0;
             this.codigoTabPage.Text = "Código";
             // 
-            // nomeTabPage
+            // codigoDataGridView
             // 
-            this.nomeTabPage.BackColor = System.Drawing.SystemColors.Control;
-            this.nomeTabPage.Controls.Add(this.nomeDataGridView);
-            this.nomeTabPage.Controls.Add(this.nomeTextBox);
-            this.nomeTabPage.Location = new System.Drawing.Point(4, 22);
-            this.nomeTabPage.Name = "nomeTabPage";
-            this.nomeTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.nomeTabPage.Size = new System.Drawing.Size(457, 133);
-            this.nomeTabPage.TabIndex = 1;
-            this.nomeTabPage.Text = "Nome";
+            this.codigoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.codigoDataGridView.Location = new System.Drawing.Point(6, 29);
+            this.codigoDataGridView.Name = "codigoDataGridView";
+            this.codigoDataGridView.Size = new System.Drawing.Size(445, 106);
+            this.codigoDataGridView.TabIndex = 1;
             // 
             // codigoTextBox
             // 
@@ -87,10 +85,37 @@ namespace GestorSAAE.Apresentacao
             this.codigoTextBox.TabIndex = 0;
             this.codigoTextBox.Leave += new System.EventHandler(this.codigoTextBox_Leave);
             // 
+            // nomeTabPage
+            // 
+            this.nomeTabPage.BackColor = System.Drawing.SystemColors.Control;
+            this.nomeTabPage.Controls.Add(this.nomeDataGridView);
+            this.nomeTabPage.Controls.Add(this.nomeTextBox);
+            this.nomeTabPage.Location = new System.Drawing.Point(4, 22);
+            this.nomeTabPage.Name = "nomeTabPage";
+            this.nomeTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.nomeTabPage.Size = new System.Drawing.Size(457, 138);
+            this.nomeTabPage.TabIndex = 1;
+            this.nomeTabPage.Text = "Nome";
+            // 
+            // nomeDataGridView
+            // 
+            this.nomeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.nomeDataGridView.Location = new System.Drawing.Point(6, 30);
+            this.nomeDataGridView.Name = "nomeDataGridView";
+            this.nomeDataGridView.Size = new System.Drawing.Size(445, 105);
+            this.nomeDataGridView.TabIndex = 1;
+            // 
+            // nomeTextBox
+            // 
+            this.nomeTextBox.Location = new System.Drawing.Point(6, 4);
+            this.nomeTextBox.Name = "nomeTextBox";
+            this.nomeTextBox.Size = new System.Drawing.Size(445, 20);
+            this.nomeTextBox.TabIndex = 0;
+            // 
             // exibirButton
             // 
             this.exibirButton.Image = global::GestorSAAE.Properties.Resources.verifica__2_;
-            this.exibirButton.Location = new System.Drawing.Point(483, 104);
+            this.exibirButton.Location = new System.Drawing.Point(483, 82);
             this.exibirButton.Name = "exibirButton";
             this.exibirButton.Size = new System.Drawing.Size(64, 64);
             this.exibirButton.TabIndex = 2;
@@ -101,7 +126,7 @@ namespace GestorSAAE.Apresentacao
             // localizarButton
             // 
             this.localizarButton.Image = global::GestorSAAE.Properties.Resources.encontrar__2_;
-            this.localizarButton.Location = new System.Drawing.Point(483, 34);
+            this.localizarButton.Location = new System.Drawing.Point(483, 12);
             this.localizarButton.Name = "localizarButton";
             this.localizarButton.Size = new System.Drawing.Size(64, 64);
             this.localizarButton.TabIndex = 1;
@@ -110,50 +135,43 @@ namespace GestorSAAE.Apresentacao
             this.localizarButton.UseVisualStyleBackColor = true;
             this.localizarButton.Click += new System.EventHandler(this.localizarButton_Click);
             // 
-            // codigoDataGridView
+            // cancelarButton
             // 
-            this.codigoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.codigoDataGridView.Location = new System.Drawing.Point(6, 29);
-            this.codigoDataGridView.Name = "codigoDataGridView";
-            this.codigoDataGridView.Size = new System.Drawing.Size(445, 98);
-            this.codigoDataGridView.TabIndex = 1;
+            this.cancelarButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelarButton.Location = new System.Drawing.Point(484, 153);
+            this.cancelarButton.Name = "cancelarButton";
+            this.cancelarButton.Size = new System.Drawing.Size(63, 23);
+            this.cancelarButton.TabIndex = 3;
+            this.cancelarButton.Text = "&Cancelar";
+            this.cancelarButton.UseVisualStyleBackColor = true;
             // 
-            // nomeDataGridView
+            // sqlConnection
             // 
-            this.nomeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.nomeDataGridView.Location = new System.Drawing.Point(6, 30);
-            this.nomeDataGridView.Name = "nomeDataGridView";
-            this.nomeDataGridView.Size = new System.Drawing.Size(445, 98);
-            this.nomeDataGridView.TabIndex = 3;
+            this.sqlConnection.FireInfoMessageEventOnUserErrors = false;
             // 
-            // nomeTextBox
-            // 
-            this.nomeTextBox.Location = new System.Drawing.Point(6, 4);
-            this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(445, 20);
-            this.nomeTextBox.TabIndex = 2;
-            // 
-            // FormLocalizar
+            // FormLocalizarUsuario
             // 
             this.AcceptButton = this.exibirButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 183);
+            this.CancelButton = this.cancelarButton;
+            this.ClientSize = new System.Drawing.Size(553, 186);
+            this.Controls.Add(this.cancelarButton);
             this.Controls.Add(this.exibirButton);
             this.Controls.Add(this.localizarButton);
             this.Controls.Add(this.localizarTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormLocalizar";
+            this.Name = "FormLocalizarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Localizar";
             this.localizarTabControl.ResumeLayout(false);
             this.codigoTabPage.ResumeLayout(false);
             this.codigoTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.codigoDataGridView)).EndInit();
             this.nomeTabPage.ResumeLayout(false);
             this.nomeTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.codigoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nomeDataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -170,5 +188,7 @@ namespace GestorSAAE.Apresentacao
         private System.Windows.Forms.DataGridView codigoDataGridView;
         private System.Windows.Forms.DataGridView nomeDataGridView;
         private System.Windows.Forms.TextBox nomeTextBox;
+        private System.Windows.Forms.Button cancelarButton;
+        public System.Data.SqlClient.SqlConnection sqlConnection;
     }
 }

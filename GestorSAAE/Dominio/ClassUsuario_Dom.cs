@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace GestorSAAE.Dominio
 {
@@ -13,23 +14,27 @@ namespace GestorSAAE.Dominio
         private string senha;
         private string autenticacao;
         private string situacao;
+        private DataTable usuarios;
 
+        public DataTable Usuarios { get => usuarios; set => usuarios = value; }
         public int Codigo { get => codigo; set => codigo = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Identificador { get => identificador; set => identificador = value; }
         public string Senha { get => senha; set => senha = value; }
         public string Autenticacao { get => autenticacao; set => autenticacao = value; }
-        public string Situacao { get => situacao;
+        public string Situacao
+        {
+            get => situacao;
             set
             {
-                autenticacao = value;
-                if (autenticacao == "A")
+                Autenticacao = value;
+                if (Autenticacao == "A")
                 {
-                    autenticacao = "Ativo";
+                    Autenticacao = "Ativo";
                 }
                 else
                 {
-                    autenticacao = "Cancelado";
+                    Autenticacao = "Cancelado";
                 }
             }
         }
