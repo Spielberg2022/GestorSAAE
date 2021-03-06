@@ -107,8 +107,13 @@ namespace GestorSAAE.Apresentacao
         {
             FormCadUsuario formCadUsuario = new FormCadUsuario();
             formCadUsuario.MdiParent = this;
-            formCadUsuario.Text = formCadUsuario.Text + " " + childFormNumber++;
+            formCadUsuario.Text = formCadUsuario.Text + " - (" + childFormNumber++ + ")";
             formCadUsuario.Show();
+        }
+
+        private void MDIParent_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

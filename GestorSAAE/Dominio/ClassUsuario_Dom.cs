@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GestorSAAE.Dominio
 {
-    class ClassUsuario
+    class ClassUsuario_Dom
     {
         private int codigo;
         private string nome;
