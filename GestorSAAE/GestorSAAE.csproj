@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Aplicacao\ClassChavesWin_Apl.cs" />
     <Compile Include="Aplicacao\ClassConfigBD_Apl.cs" />
+    <Compile Include="Aplicacao\ClassGestorWslyS_Apl.cs" />
     <Compile Include="Aplicacao\ClassUsuario_Apl.cs" />
     <Compile Include="Apresentacao\FormCadUsuario.cs">
       <SubType>Form</SubType>
@@ -91,9 +92,11 @@
     </Compile>
     <Compile Include="Dominio\ClassChavesWin_Dom.cs" />
     <Compile Include="Dominio\ClassConfigBD_Dom.cs" />
+    <Compile Include="Dominio\ClassGestorWslyS_Dom.cs" />
     <Compile Include="Dominio\ClassUsuario_Dom.cs" />
     <Compile Include="Persistencia\ClassChavesWin_Per.cs" />
     <Compile Include="Persistencia\ClassConfigBD_Per.cs" />
+    <Compile Include="Persistencia\ClassGestorWslyS_Per.cs" />
     <Compile Include="Persistencia\ClassUsuario_Per.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

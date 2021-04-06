@@ -11,6 +11,7 @@ namespace GestorSAAE.Apresentacao
 {
     public partial class FormCadUsuario : Form
     {
+        public bool primeiroAcesso = false;
         public FormCadUsuario()
         {
             InitializeComponent();
@@ -31,6 +32,22 @@ namespace GestorSAAE.Apresentacao
             // TODO: esta linha de código carrega dados na tabela 'gestorWslyDataSet.Usuario'. Você pode movê-la ou removê-la conforme necessário.
             //this.usuarioTableAdapter.Fill(this.gestorWslyDataSet.Usuario);
 
+            if(primeiroAcesso)
+            {
+                loginLabel.Text = "Cadastro do Administrador GERAL";
+                altSenhaCheckBox.Enabled = false;
+                situacaoComboBox.Enabled = false;
+                autenticacaoCheckBox.Enabled = false;
+                tipoComboBox.Enabled = false;
+                localizarButton.Enabled = false;
+                novoButton.Enabled = false;
+                editarButton.Enabled = false;
+                imprimirButton.Enabled = false;
+                nomeTextBox.Enabled = true;
+                identificadorTextBox.Enabled = true;
+                senhaTextBox.Enabled = true;
+                salvarButton.Enabled = true;
+            }
         }
 
         private void usuarioBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
@@ -86,13 +103,20 @@ namespace GestorSAAE.Apresentacao
 
         private void salvarButton_Click(object sender, EventArgs e)
         {
-            //Deixar essa opção para o final, depois de confirmado o salvamento
-            nomeTextBox.Enabled = false;
-            identificadorTextBox.Enabled = false;
-            senhaTextBox.Enabled = false;
-            situacaoComboBox.Enabled = false;
-            autenticacaoCheckBox.Enabled = false;
-            codigoLabel1.Text = "";
+            if(!primeiroAcesso)
+            {
+                //Deixar essa opção para o final, depois de confirmado o salvamento
+                nomeTextBox.Enabled = false;
+                identificadorTextBox.Enabled = false;
+                senhaTextBox.Enabled = false;
+                situacaoComboBox.Enabled = false;
+                autenticacaoCheckBox.Enabled = false;
+                codigoLabel1.Text = "";
+            }
+            else
+            {
+                this.Hide();
+            }
         }
 
         private void localizarButton_Click(object sender, EventArgs e)

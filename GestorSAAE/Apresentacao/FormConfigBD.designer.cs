@@ -251,6 +251,7 @@ namespace GestorSAAE.Apresentacao
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configurações do BD";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormConfigBD_FormClosed);
+            this.Load += new System.EventHandler(this.FormConfigBD_Load);
             this.bd_groupBox.ResumeLayout(false);
             this.bd_groupBox.PerformLayout();
             this.ResumeLayout(false);

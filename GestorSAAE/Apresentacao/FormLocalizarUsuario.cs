@@ -28,7 +28,7 @@ namespace GestorSAAE.Apresentacao
         {
             varLoc = "codigo";
             
-            if (codigoTextBox.Text != null || codigoTextBox.Text != "")
+            if (codigoTextBox.Text != null && codigoTextBox.Text != "")
             {
                 usuario_Dom.Codigo = int.Parse(codigoTextBox.Text);
                 localizarButton_Click(sender, e);

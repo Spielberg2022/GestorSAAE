@@ -34,8 +34,10 @@ namespace GestorSAAE.Apresentacao
             System.Windows.Forms.Label identificadorLabel;
             System.Windows.Forms.Label senhaLabel;
             System.Windows.Forms.Label situacaoLabel;
+            System.Windows.Forms.Label tipoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadUsuario));
             this.usuariosGroupBox = new System.Windows.Forms.GroupBox();
+            this.altSenhaCheckBox = new System.Windows.Forms.CheckBox();
             this.situacaoComboBox = new System.Windows.Forms.ComboBox();
             this.codigoLabel1 = new System.Windows.Forms.Label();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
@@ -49,13 +51,14 @@ namespace GestorSAAE.Apresentacao
             this.localizarButton = new System.Windows.Forms.Button();
             this.salvarButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.altSenhaCheckBox = new System.Windows.Forms.CheckBox();
             this.sqlConnection = new System.Data.SqlClient.SqlConnection();
+            this.tipoComboBox = new System.Windows.Forms.ComboBox();
             codigoLabel = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
             identificadorLabel = new System.Windows.Forms.Label();
             senhaLabel = new System.Windows.Forms.Label();
             situacaoLabel = new System.Windows.Forms.Label();
+            tipoLabel = new System.Windows.Forms.Label();
             this.usuariosGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +66,7 @@ namespace GestorSAAE.Apresentacao
             // codigoLabel
             // 
             codigoLabel.AutoSize = true;
-            codigoLabel.Location = new System.Drawing.Point(6, 47);
+            codigoLabel.Location = new System.Drawing.Point(6, 34);
             codigoLabel.Name = "codigoLabel";
             codigoLabel.Size = new System.Drawing.Size(43, 13);
             codigoLabel.TabIndex = 0;
@@ -72,7 +75,7 @@ namespace GestorSAAE.Apresentacao
             // nomeLabel
             // 
             nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(6, 76);
+            nomeLabel.Location = new System.Drawing.Point(6, 63);
             nomeLabel.Name = "nomeLabel";
             nomeLabel.Size = new System.Drawing.Size(38, 13);
             nomeLabel.TabIndex = 2;
@@ -81,7 +84,7 @@ namespace GestorSAAE.Apresentacao
             // identificadorLabel
             // 
             identificadorLabel.AutoSize = true;
-            identificadorLabel.Location = new System.Drawing.Point(6, 102);
+            identificadorLabel.Location = new System.Drawing.Point(6, 89);
             identificadorLabel.Name = "identificadorLabel";
             identificadorLabel.Size = new System.Drawing.Size(68, 13);
             identificadorLabel.TabIndex = 4;
@@ -90,7 +93,7 @@ namespace GestorSAAE.Apresentacao
             // senhaLabel
             // 
             senhaLabel.AutoSize = true;
-            senhaLabel.Location = new System.Drawing.Point(6, 128);
+            senhaLabel.Location = new System.Drawing.Point(6, 115);
             senhaLabel.Name = "senhaLabel";
             senhaLabel.Size = new System.Drawing.Size(41, 13);
             senhaLabel.TabIndex = 6;
@@ -99,16 +102,18 @@ namespace GestorSAAE.Apresentacao
             // situacaoLabel
             // 
             situacaoLabel.AutoSize = true;
-            situacaoLabel.Location = new System.Drawing.Point(6, 154);
+            situacaoLabel.Location = new System.Drawing.Point(6, 141);
             situacaoLabel.Name = "situacaoLabel";
             situacaoLabel.Size = new System.Drawing.Size(52, 13);
-            situacaoLabel.TabIndex = 8;
+            situacaoLabel.TabIndex = 9;
             situacaoLabel.Text = "Situação:";
             // 
             // usuariosGroupBox
             // 
             this.usuariosGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.usuariosGroupBox.Controls.Add(tipoLabel);
+            this.usuariosGroupBox.Controls.Add(this.tipoComboBox);
             this.usuariosGroupBox.Controls.Add(this.altSenhaCheckBox);
             this.usuariosGroupBox.Controls.Add(situacaoLabel);
             this.usuariosGroupBox.Controls.Add(this.situacaoComboBox);
@@ -128,6 +133,16 @@ namespace GestorSAAE.Apresentacao
             this.usuariosGroupBox.TabStop = false;
             this.usuariosGroupBox.Text = "Usuário:";
             // 
+            // altSenhaCheckBox
+            // 
+            this.altSenhaCheckBox.AutoSize = true;
+            this.altSenhaCheckBox.Location = new System.Drawing.Point(212, 115);
+            this.altSenhaCheckBox.Name = "altSenhaCheckBox";
+            this.altSenhaCheckBox.Size = new System.Drawing.Size(88, 17);
+            this.altSenhaCheckBox.TabIndex = 8;
+            this.altSenhaCheckBox.Text = "Alterar senha";
+            this.altSenhaCheckBox.UseVisualStyleBackColor = true;
+            // 
             // situacaoComboBox
             // 
             this.situacaoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -137,14 +152,14 @@ namespace GestorSAAE.Apresentacao
             this.situacaoComboBox.Items.AddRange(new object[] {
             "Ativo",
             "Cancelado"});
-            this.situacaoComboBox.Location = new System.Drawing.Point(84, 151);
+            this.situacaoComboBox.Location = new System.Drawing.Point(84, 138);
             this.situacaoComboBox.Name = "situacaoComboBox";
             this.situacaoComboBox.Size = new System.Drawing.Size(121, 21);
-            this.situacaoComboBox.TabIndex = 9;
+            this.situacaoComboBox.TabIndex = 10;
             // 
             // codigoLabel1
             // 
-            this.codigoLabel1.Location = new System.Drawing.Point(84, 47);
+            this.codigoLabel1.Location = new System.Drawing.Point(84, 34);
             this.codigoLabel1.Name = "codigoLabel1";
             this.codigoLabel1.Size = new System.Drawing.Size(104, 23);
             this.codigoLabel1.TabIndex = 1;
@@ -154,7 +169,7 @@ namespace GestorSAAE.Apresentacao
             this.nomeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nomeTextBox.Enabled = false;
-            this.nomeTextBox.Location = new System.Drawing.Point(84, 73);
+            this.nomeTextBox.Location = new System.Drawing.Point(84, 60);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(304, 20);
             this.nomeTextBox.TabIndex = 3;
@@ -162,7 +177,7 @@ namespace GestorSAAE.Apresentacao
             // identificadorTextBox
             // 
             this.identificadorTextBox.Enabled = false;
-            this.identificadorTextBox.Location = new System.Drawing.Point(84, 99);
+            this.identificadorTextBox.Location = new System.Drawing.Point(84, 86);
             this.identificadorTextBox.Name = "identificadorTextBox";
             this.identificadorTextBox.Size = new System.Drawing.Size(121, 20);
             this.identificadorTextBox.TabIndex = 5;
@@ -170,7 +185,7 @@ namespace GestorSAAE.Apresentacao
             // senhaTextBox
             // 
             this.senhaTextBox.Enabled = false;
-            this.senhaTextBox.Location = new System.Drawing.Point(84, 125);
+            this.senhaTextBox.Location = new System.Drawing.Point(84, 112);
             this.senhaTextBox.Name = "senhaTextBox";
             this.senhaTextBox.Size = new System.Drawing.Size(121, 20);
             this.senhaTextBox.TabIndex = 7;
@@ -178,10 +193,10 @@ namespace GestorSAAE.Apresentacao
             // autenticacaoCheckBox
             // 
             this.autenticacaoCheckBox.Enabled = false;
-            this.autenticacaoCheckBox.Location = new System.Drawing.Point(84, 178);
+            this.autenticacaoCheckBox.Location = new System.Drawing.Point(84, 165);
             this.autenticacaoCheckBox.Name = "autenticacaoCheckBox";
             this.autenticacaoCheckBox.Size = new System.Drawing.Size(180, 24);
-            this.autenticacaoCheckBox.TabIndex = 10;
+            this.autenticacaoCheckBox.TabIndex = 11;
             this.autenticacaoCheckBox.Text = "Exige autenticação de 2 fatores";
             this.autenticacaoCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -267,19 +282,34 @@ namespace GestorSAAE.Apresentacao
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // altSenhaCheckBox
-            // 
-            this.altSenhaCheckBox.AutoSize = true;
-            this.altSenhaCheckBox.Location = new System.Drawing.Point(212, 128);
-            this.altSenhaCheckBox.Name = "altSenhaCheckBox";
-            this.altSenhaCheckBox.Size = new System.Drawing.Size(88, 17);
-            this.altSenhaCheckBox.TabIndex = 11;
-            this.altSenhaCheckBox.Text = "Alterar senha";
-            this.altSenhaCheckBox.UseVisualStyleBackColor = true;
-            // 
             // sqlConnection
             // 
             this.sqlConnection.FireInfoMessageEventOnUserErrors = false;
+            // 
+            // tipoLabel
+            // 
+            tipoLabel.AutoSize = true;
+            tipoLabel.Location = new System.Drawing.Point(6, 198);
+            tipoLabel.Name = "tipoLabel";
+            tipoLabel.Size = new System.Drawing.Size(31, 13);
+            tipoLabel.TabIndex = 12;
+            tipoLabel.Text = "Tipo:";
+            // 
+            // tipoComboBox
+            // 
+            this.tipoComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tipoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tipoComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.tipoComboBox.Enabled = false;
+            this.tipoComboBox.FormattingEnabled = true;
+            this.tipoComboBox.Items.AddRange(new object[] {
+            "Ativo",
+            "Cancelado"});
+            this.tipoComboBox.Location = new System.Drawing.Point(84, 195);
+            this.tipoComboBox.Name = "tipoComboBox";
+            this.tipoComboBox.Size = new System.Drawing.Size(304, 21);
+            this.tipoComboBox.TabIndex = 13;
             // 
             // FormCadUsuario
             // 
@@ -326,5 +356,6 @@ namespace GestorSAAE.Apresentacao
         private System.Windows.Forms.Button novoButton;
         private System.Windows.Forms.CheckBox altSenhaCheckBox;
         public System.Data.SqlClient.SqlConnection sqlConnection;
+        private System.Windows.Forms.ComboBox tipoComboBox;
     }
 }

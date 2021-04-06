@@ -15,18 +15,22 @@ namespace GestorSAAE.Apresentacao
 
 		ClassChavesWin_Apl chavesWin_Apl = new ClassChavesWin_Apl();
 		ClassConfigBD_Apl configBD_Apl = new ClassConfigBD_Apl();
+		ClassUsuario_Apl usuario_Apl = new ClassUsuario_Apl();
+		ClassGestorWslyS_Apl gestor_Apl = new ClassGestorWslyS_Apl();
 		ClassChavesWin_Per chavesWin_Per = new ClassChavesWin_Per();
         ClassConfigBD_Per configBD_Per = new ClassConfigBD_Per();
+		ClassGestorWslyS_Per gestor_Per = new ClassGestorWslyS_Per();
 		ClassChavesWin_Dom chavesWin_Dom = new ClassChavesWin_Dom();
         ClassConfigBD_Dom bd = new ClassConfigBD_Dom();
+		ClassGestorWslyS_Dom gestor_Dom = new ClassGestorWslyS_Dom();
         BindingSource relacionamento = new BindingSource();
         char[] pesquisa = { '\\' };
 		bool erro;
 
         public FormConfigBD()
         {
-            InitializeComponent();
-            
+			InitializeComponent();
+
 			testaBd_button_Click();
         }
 
@@ -43,10 +47,11 @@ namespace GestorSAAE.Apresentacao
 
 				if (!configBD_Apl.Conectar(bd))
 				{
-					MessageBox.Show("Erro ao tentar conectar com o banco de dados.\n\n" + configBD_Per.erro,
+					MessageBox.Show("Erro ao tentar conectar com o banco de dados. Entre em contato com o suporte.\n\n" + configBD_Per.erro,
 											"Erro",
 											  MessageBoxButtons.OK,
 											 MessageBoxIcon.Error);
+					erro = true;
 				}
 				else
                 {
@@ -69,10 +74,27 @@ namespace GestorSAAE.Apresentacao
 
         private void okButton_Click()
         {
-			MDIParent mDIParent = new MDIParent();
-			mDIParent.sqlConnection = connection;
-			mDIParent.Show();
-			this.Hide();
+			gestor_Apl.sqlConnection = connection;
+
+			if(!gestor_Apl.PrimeiroAcesso())
+            {
+				//**********************Entrar com o usuário e dar apenas as permissões permitidas.
+
+				MDIParent mDIParent = new MDIParent();
+				mDIParent.sqlConnection = connection;
+				mDIParent.Show();
+				this.Hide();
+			}
+			else
+            {
+				//**********************Cadastrar usuário Admin
+
+				FormCadUsuario cadUsuario = new FormCadUsuario();
+				cadUsuario.sqlConnection = connection;
+				cadUsuario.primeiroAcesso = true;
+				this.Hide();
+				cadUsuario.ShowDialog();
+            }
 		}
 
         void Limpa()
@@ -252,8 +274,17 @@ namespace GestorSAAE.Apresentacao
         
         void Bd_groupBoxEnter(object sender, EventArgs e)
         {
-			if(!erro)
+			if (!erro)
 				this.Hide();
-        }
+			else
+			{
+
+			}
+		}
+
+        private void FormConfigBD_Load(object sender, EventArgs e)
+        {
+			
+		}
     }
 }
